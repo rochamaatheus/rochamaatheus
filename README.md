@@ -23,8 +23,9 @@
  ### 📫 Redes Sociais e para Contato
   
 <div> 
-  <a href="https://instagram.com/_rochamaatheus" target="_blank"><img src="https://img.shields.io/badge/-Instagram-%23E4405F?style=for-the-badge&logo=instagram&logoColor=white" target="_blank"></a>
-  <a href = "mailto:matheussilveirarocha.sc@gmail.com"><img src="https://img.shields.io/badge/-Gmail-%23333?style=for-the-badge&logo=gmail&logoColor=white" target="_blank"></a>
-  <a href="https://www.linkedin.com/in/matheus-rocha-269870234" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a> 
-  
+
+  <a href="https://instagram.com/_rochamaatheus" target="_blank" rel="next"><img src="https://img.shields.io/badge/-Instagram-%23E4405F?style=for-the-badge&logo=instagram&logoColor=white" target="_blank" rel="next"></a>
+  <a href = "mailto:matheussilveirarocha.sc@gmail.com" target="_blank" rel="next"><img src="https://img.shields.io/badge/-Gmail-%23333?style=for-the-badge&logo=gmail&logoColor=white" target="_blank" rel="next"></a>
+  <a href="https://www.linkedin.com/in/matheus-rocha-269870234" target="_blank" rel="next"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank" rel="next"></a> 
+ 
 </div>
