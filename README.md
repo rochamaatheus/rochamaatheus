@@ -14,21 +14,6 @@
   <img align="center" alt="Rocha-CSS" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg">
 </div>
 
-### 🔭 Trabalhos
-
-  Estou trabalhando atualmente como Front-End
-  
-  Tenho alguns projetos antigos e atuais no meu github para mostrar minhas evoluções e novas habilidades
-<hr>
-
-### 📚 Estudos
-
-  Atualmemente estou estudando HTML, CSS, JavaScript e UI Design
-  
-  Aprendo átraves de tutoriais do youtube, pesquisas em websites, lendo artigos e fazendo cursos
-  
-  Grande parte dos meus conhecimentos vieram atráves da Origamid com o professor André e Curso Em Vídeo com o professor Gustavo Guanabara
-  
 <hr>
   
   ![Snake animation](https://github.com/rochamaatheus/rochamaatheus/blob/output/github-contribution-grid-snake.svg)
