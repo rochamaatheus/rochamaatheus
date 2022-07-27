@@ -23,6 +23,10 @@
 
   Atualmemente estou estudando HTML, CSS, JavaScript e UI Design
   
+  Aprendo átraves de tutoriais do youtube, pesquisas em websites, lendo artigos e fazendo cursos
+  
+  Grande parte dos meus conhecimentos vieram atráves da Origamid com o professor André e Curso Em Vídeo com o professor Gustavo Guanabara
+  
 <hr>
   
   ![Snake animation](https://github.com/rochamaatheus/rochamaatheus/blob/output/github-contribution-grid-snake.svg)
