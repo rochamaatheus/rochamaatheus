@@ -1,14 +1,5 @@
 ### Olá! Matheus aqui 👋
 
-### 🤔 Sobre mim
-
-  Me chamo Matheus Silveira Rocha
-  
-  Sempre gostei de programar e criar projetos, por isso busco me atualizar sobre as 
-  tecnologias utilizadas para trabalhar fazendo o que gosto
-  
-  Futuramente pretendo me tornar um Full Stack no mercado de trabalho
-
 <div align="center">
   <a href="https://github.com/rochamaatheus">
   <img height="170rem" src="https://github-readme-stats.vercel.app/api?username=rochamaatheus&show_icons=true&theme=midnight-purple&include_all_commits=true&count_private=true"/>
