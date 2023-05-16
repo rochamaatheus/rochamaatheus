@@ -25,6 +25,5 @@
   <a href="https://instagram.com/rocha.maatheus" target="_blank" rel="external"><img src="https://img.shields.io/badge/-Instagram-%23E4405F?style=for-the-badge&logo=instagram&logoColor=white" target="_blank" rel="external"></a>
   <a href="https://www.linkedin.com/in/matheus-rocha-269870234" target="_blank" rel="external"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank" rel="external"></a>
     <a href="mailto:matheussilveirarocha.sc@gmail.com" target="_blank" rel="external"><img src="https://img.shields.io/badge/-Gmail-%23333?style=for-the-badge&logo=gmail&logoColor=white" target="_blank" rel="external"></a>
-  <a href="https://www.facebook.com/eu.rochamaatheus" target="_blank" rel="external"><img src="https://img.shields.io/badge/Facebook-1877F2?style=for-the-badge&logo=facebook&logoColor=white" target="_blank" rel="external"></a>
 
 </div>
