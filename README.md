@@ -19,8 +19,6 @@
 </div>
 
 <hr>
-  
-  ![Snake animation](https://github.com/rochamaatheus/rochamaatheus/blob/output/github-contribution-grid-snake.svg)
 
 <h2>📫 Redes Sociais e para Contato</h2>
   
