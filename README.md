@@ -1,35 +1,67 @@
-<h1>Olá! Matheus aqui 👋</h1>
+<h1 align="center">👋 Fala aí! Eu sou o Matheus Rocha</h1>
 
-<div align="center">
-  <div>
-    <a href="https://github.com/rochamaatheus">
-    <img height="160rem" src="https://github-readme-stats.vercel.app/api?username=rochamaatheus&show_icons=true&theme=midnight-purple&include_all_commits=true&count_private=true"/>
-    <img height="160rem" src="https://github-readme-stats.vercel.app/api/top-langs/?username=rochamaatheus&layout=compact&langs_count=7&theme=midnight-purple&hide=html,css,shell,hack,scss"/>
-  </div>
-</div>
+<p align="center">
+  <b>Estudante hardcore de programação, automação e sistemas.</b><br>
+  <i>Missão: Me tornar um programador 100x melhor através de desafios reais, sem atalhos.</i>
+</p>
 
-<div style="display: inline_block"><br>
-  <img align="center" alt="Rocha-HTML" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg">
-  <img align="center" alt="Rocha-CSS" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg">
-  <img align="center" alt="Rocha-JavaScript" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg">
-  <img align="center" alt="Rocha-NEXT" height="30" width="40" src="https://github.com/devicons/devicon/blob/master/icons/nextjs/nextjs-original.svg">
-  <img align="center" alt="Rocha-TypeScript" height="30" width="40" src="https://github.com/devicons/devicon/blob/master/icons/typescript/typescript-original.svg">
-  <img align="center" alt="Rocha-React" height="30" width="40" src="https://github.com/devicons/devicon/blob/master/icons/react/react-original.svg">
-  <img align="center" alt="Rocha-WordPress" height="30" width="40" src="https://github.com/devicons/devicon/blob/master/icons/wordpress/wordpress-plain.svg">
-  <img align="center" alt="Rocha-WooCommerce" height="30" width="40" src="https://github.com/devicons/devicon/blob/master/icons/woocommerce/woocommerce-original.svg">
-  <img align="center" alt="Rocha-PHP" height="30" width="40" src="https://github.com/devicons/devicon/blob/master/icons/php/php-original.svg">
-  <img align="center" alt="Rocha-VUE" height="30" width="40" src="https://github.com/devicons/devicon/blob/master/icons/vuejs/vuejs-original.svg">
-  <img align="center" alt="Rocha-SASS" height="30" width="40" src="https://github.com/devicons/devicon/blob/master/icons/sass/sass-original.svg">
-</div>
+---
 
-<hr>
+### 🚀 Sobre Mim
 
-<h2>📫 Redes Sociais e para Contato</h2>
-  
-<div> 
+- 💻 Estudante autodidata de programação desde cedo
+- 🔧 Atualmente mexendo com VBA, C, Node.js e automações
+- 📈 Focado em algoritmos, sistemas e evolução constante
+- 🧠 Projeto pessoal: [Plano Intensivo - Programador 100x Melhor](https://github.com/rochamaatheus/master-coder-journey)
 
-  <a href="https://instagram.com/rocha.maatheus" target="_blank" rel="external"><img src="https://img.shields.io/badge/-Instagram-%23E4405F?style=for-the-badge&logo=instagram&logoColor=white" target="_blank" rel="external"></a>
-  <a href="https://www.linkedin.com/in/matheus-rocha-269870234" target="_blank" rel="external"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank" rel="external"></a>
-    <a href="mailto:matheussilveirarocha.sc@gmail.com" target="_blank" rel="external"><img src="https://img.shields.io/badge/-Gmail-%23333?style=for-the-badge&logo=gmail&logoColor=white" target="_blank" rel="external"></a>
-  <a href="https://www.youtube.com/channel/UC5FdhyTxDER3YO_-GIstGAA" target="_blank" rel="external"><img src="https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white" target="_blank" rel="external"></a>
-</div>
+---
+
+### 📊 Minhas estatísticas
+
+<p align="center">
+  <img height="160em" src="https://github-readme-stats.vercel.app/api?username=rochamaatheus&show_icons=true&theme=midnight-purple&include_all_commits=true&count_private=true"/>
+  <img height="160em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=rochamaatheus&layout=compact&langs_count=7&theme=midnight-purple&hide=html,css,shell,hack,scss"/>
+</p>
+
+---
+
+### 🧠 Tecnologias que estou usando / estudando
+
+<p align="center">
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" height="40"/>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" height="40"/>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" height="40"/>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" height="40"/>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" height="40"/>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" height="40"/>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg" height="40"/>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" height="40"/>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" height="40"/>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" height="40"/>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" height="40"/>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" height="40"/>
+</p>
+
+---
+
+### 🧩 Alguns projetos legais
+
+- 🧪 (Em breve) Cache LRU em C / Huffman Encoding / Sudoku com GUI...
+
+---
+
+### 📫 Como me encontrar
+
+<p align="center">
+  <a href="https://instagram.com/rocha.maatheus" target="_blank"><img src="https://img.shields.io/badge/-Instagram-%23E4405F?style=for-the-badge&logo=instagram&logoColor=white"/></a>
+  <a href="https://www.linkedin.com/in/matheus-rocha-269870234" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white"/></a>
+  <a href="mailto:matheussilveirarocha.sc@gmail.com" target="_blank"><img src="https://img.shields.io/badge/-Gmail-%23333?style=for-the-badge&logo=gmail&logoColor=white"/></a>
+  <a href="https://www.youtube.com/channel/UC5FdhyTxDER3YO_-GIstGAA" target="_blank"><img src="https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white"/></a>
+</p>
+
+---
+
+<p align="center">
+  <i>“Sem atalhos. Sem desculpas. Aprendizado real, no código e na raça.”</i><br>
+  🔥 <b>Vamo pro topo!</b>
+</p>
