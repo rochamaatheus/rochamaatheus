@@ -1,8 +1,8 @@
 <h1 align="center">👋 Fala aí! Eu sou o Matheus Rocha</h1>
 
 <p align="center">
-  <b>Estudante hardcore de programação, automação e sistemas.</b><br>
-  <i>Missão: Me tornar um programador 100x melhor através de desafios reais, sem atalhos.</i>
+  <b>Programação, automação e sistemas.</b><br>
+  <i>Missão: Me tornar referência no mercado.</i>
 </p>
 
 ---
@@ -10,9 +10,8 @@
 ### 🚀 Sobre Mim
 
 - 💻 Estudante autodidata de programação desde cedo
-- 🔧 Atualmente mexendo com VBA, C, Node.js e automações
+- 🔧 Atualmente mexendo com N8N, JavaScript e automações
 - 📈 Focado em algoritmos, sistemas e evolução constante
-- 🧠 Projeto pessoal: [Plano Intensivo - Programador 100x Melhor](https://github.com/rochamaatheus/master-coder-journey)
 
 ---
 
@@ -62,6 +61,5 @@
 ---
 
 <p align="center">
-  <i>“Sem atalhos. Sem desculpas. Aprendizado real, no código e na raça.”</i><br>
-  🔥 <b>Vamo pro topo!</b>
+  🔥 <b>Kamino no topo!</b>
 </p>
