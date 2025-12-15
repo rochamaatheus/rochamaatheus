@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="pt-PT" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Matheus Rocha | Desenvolvedor</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'neo-bg': '#f3f4f6',
+                        'neo-black': '#0f0f0f',
+                        'neo-purple': '#8b5cf6',
+                        'neo-dark-purple': '#5b21b6',
+                        'neo-lime': '#ccff00',
+                        'neo-white': '#ffffff',
+                        'neo-gray': '#e5e7eb'
+                    },
+                    fontFamily: {
+                        'sans': ['Archivo Black', 'sans-serif'],
+                        'mono': ['Space Mono', 'monospace'],
+                    },
+                    boxShadow: {
+                        'neo': '5px 5px 0px 0px rgba(15,15,15,1)',
+                        'neo-sm': '3px 3px 0px 0px rgba(15,15,15,1)',
+                        'neo-lg': '8px 8px 0px 0px rgba(15,15,15,1)',
+                        'neo-xl': '12px 12px 0px 0px rgba(15,15,15,1)',
+                    },
+                    animation: {
+                        'marquee': 'marquee 25s linear infinite',
+                        'stamp-pop': 'stampPop 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards',
+                    },
+                    keyframes: {
+                        stampPop: {
+                            '0%': { transform: 'scale(0) rotate(var(--rotation))' },
+                            '100%': { transform: 'scale(1) rotate(var(--rotation))' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #f3f4f6;
+            background-image: 
+                linear-gradient(to right, #e5e7eb 1px, transparent 1px),
+                linear-gradient(to bottom, #e5e7eb 1px, transparent 1px);
+            background-size: 30px 30px;
+            overflow-x: hidden;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .fluid-text {
+            font-size: clamp(3.8rem, 14vw, 9rem);
+            line-height: 0.85;
+            letter-spacing: -0.05em;
+        }
+
+        .marquee-wrapper {
+            display: flex;
+            overflow: hidden;
+            user-select: none;
+            width: 100%;
+        }
+        
+        .marquee-track {
+            display: flex;
+            flex-shrink: 0;
+            animation: marquee 20s linear infinite;
+        }
+        
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-100%); }
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .text-stroke-black { -webkit-text-stroke: 1.5px #0f0f0f; color: transparent; }
+        .text-stroke-white { -webkit-text-stroke: 1.5px white; color: transparent; }
+
+        .draggable {
+            cursor: grab;
+            user-select: none;
+            touch-action: none;
+            position: absolute;
+            z-index: 50;
+        }
+        .draggable:active {
+            cursor: grabbing;
+            z-index: 60;
+            transform: scale(1.05);
+        }
+        
+        .stamp {
+            position: absolute;
+            pointer-events: none;
+            font-family: 'Archivo Black', sans-serif;
+            text-transform: uppercase;
+            border: 3px solid black;
+            padding: 0.25rem 0.5rem;
+            font-size: 1.2rem;
+            z-index: 9999;
+            animation: stamp-pop 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+            opacity: 0.9;
+            white-space: nowrap;
+        }
+
+        #mobile-menu {
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        #mobile-menu.hidden-menu {
+            transform: translateX(100%);
+        }
+        #mobile-menu.visible-menu {
+            transform: translateX(0);
+        }
+
+        .btn-brutal {
+            transition: all 0.1s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .btn-brutal:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 8px 8px 0px 0px rgba(15,15,15,1);
+        }
+
+        .btn-brutal:active {
+            transform: translate(4px, 4px);
+            box-shadow: none;
+        }
+    </style>
+</head>
+<body class="text-neo-black selection:bg-neo-purple selection:text-white relative">
+
+    <nav class="fixed w-full z-50 top-0 left-0 p-4 pointer-events-none">
+        <div class="max-w-7xl mx-auto flex justify-between items-start pointer-events-auto">
+            <a href="#" class="btn-brutal bg-neo-purple text-white border-4 border-black px-4 py-2 shadow-neo font-sans text-xl md:text-2xl tracking-tighter z-50 transform -rotate-1">
+                MR_
+            </a>
+
+            <div class="hidden md:flex gap-4">
+                <a href="#projetos" class="btn-brutal bg-white border-4 border-black px-4 py-2 font-mono font-bold hover:bg-neo-lime shadow-neo">PROJETOS</a>
+                <a href="#skills" class="btn-brutal bg-white border-4 border-black px-4 py-2 font-mono font-bold hover:bg-neo-lime shadow-neo">STACK</a>
+                <a href="#contato" class="btn-brutal bg-black text-white border-4 border-black px-6 py-2 font-mono font-bold hover:bg-neo-purple shadow-neo">
+                    FALE COMIGO
+                </a>
+            </div>
+
+            <button id="menu-toggle" class="md:hidden bg-white border-4 border-black p-2 shadow-neo active:shadow-none active:translate-x-[4px] active:translate-y-[4px] z-50">
+                <i data-lucide="menu" class="w-8 h-8"></i>
+            </button>
+        </div>
+    </nav>
+
+    <div id="mobile-menu" class="fixed inset-0 bg-neo-lime z-40 hidden-menu flex flex-col justify-center items-center gap-8 md:hidden border-l-4 border-black">
+        <a href="#projetos" class="mobile-link text-4xl font-sans text-black hover:text-white transition-colors uppercase">Projetos</a>
+        <a href="#skills" class="mobile-link text-4xl font-sans text-black hover:text-white transition-colors uppercase">Stack</a>
+        <a href="#contato" class="mobile-link text-4xl font-sans text-black hover:text-white transition-colors uppercase">Contato</a>
+        <div class="mt-8 flex gap-4">
+            <a href="https://github.com/rochamaatheus" target="_blank" class="p-3 bg-white border-4 border-black shadow-neo active:translate-x-[4px] active:translate-y-[4px] active:shadow-none transition-all"><i data-lucide="github" class="w-6 h-6"></i></a>
+            <a href="https://www.instagram.com/rocha.maatheus/" target="_blank" class="p-3 bg-white border-4 border-black shadow-neo active:translate-x-[4px] active:translate-y-[4px] active:shadow-none transition-all"><i data-lucide="instagram" class="w-6 h-6"></i></a>
+        </div>
+    </div>
+
+    <header class="pt-24 pb-16 px-4 md:pt-48 md:pb-24 container mx-auto max-w-7xl relative min-h-[95vh] flex flex-col justify-center overflow-hidden">
+        
+        <div class="draggable bg-neo-lime border-4 border-black px-3 py-1 font-mono font-bold text-xs md:text-base shadow-neo top-10 left-2 md:top-24 md:left-10" style="transform: rotate(-6deg);">FULLSTACK</div>
+        <div class="draggable bg-white border-4 border-black w-14 h-14 md:w-16 md:h-16 rounded-full flex items-center justify-center shadow-neo top-1/2 right-10 hidden md:flex" style="transform: rotate(0deg);"><i data-lucide="move" class="w-6 h-6 md:w-8 md:h-8"></i></div>
+        <div class="draggable bg-neo-purple text-white border-4 border-black px-3 py-2 font-sans text-sm md:text-xl shadow-neo bottom-4 right-2 md:bottom-20 md:right-20" style="transform: rotate(3deg);">PHP & REACT</div>
+        <div class="draggable w-14 h-14 md:w-24 md:h-24 bg-transparent border-4 border-dashed border-black rounded-full top-24 right-4 md:top-32 md:right-1/3 pointer-events-auto flex items-center justify-center" style="transform: rotate(0deg);">
+            <div class="w-full h-full animate-spin-slow rounded-full border-t-4 border-transparent border-l-black"></div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 items-center relative z-10 pointer-events-none">
+            <div class="lg:col-span-8 flex flex-col gap-4 md:gap-6 pointer-events-auto">
+                <div class="reveal inline-flex items-center gap-2 w-fit bg-black text-white px-3 py-1 md:px-4 md:py-2 font-mono text-xs md:text-base font-bold transform -rotate-2 shadow-neo-sm border-2 border-white">
+                    <i data-lucide="terminal" class="w-3 h-3 md:w-4 md:h-4"></i> HELLO_WORLD
+                </div>
+                
+                <h1 class="reveal fluid-text font-sans uppercase break-words delay-100 leading-[0.85]">
+                    MATHEUS<br><span class="text-neo-purple">ROCHA</span>
+                </h1>
+                
+                <div class="reveal bg-white border-4 border-black p-4 md:p-6 shadow-neo max-w-2xl mt-2 relative delay-200 group hover:shadow-neo-lg transition-shadow">
+                    <div class="absolute -top-3 -right-3 bg-neo-lime border-4 border-black px-2 py-1 font-mono text-[10px] md:text-xs font-bold transform rotate-3">DEV BRUTAL</div>
+                    <p class="font-mono text-base md:text-xl leading-relaxed">
+                        Do <strong>PHP raiz</strong> ao <strong>Next.js moderno</strong>. Crio sistemas complexos, sites de alta performance e automações com IA que resolvem problemas reais.
+                    </p>
+                </div>
+
+                <div class="reveal flex flex-col sm:flex-row gap-4 mt-6 delay-300 w-full sm:w-auto">
+                    <a href="https://www.instagram.com/rocha.maatheus/" target="_blank" class="btn-brutal w-full sm:w-auto text-center bg-neo-purple text-white border-4 border-black px-6 py-4 font-sans text-lg md:text-xl shadow-neo hover:bg-neo-dark-purple flex items-center justify-center gap-2">
+                        <i data-lucide="instagram" class="w-6 h-6"></i> CHAMAR NO INSTA
+                    </a>
+                    <a href="#contato" class="btn-brutal w-full sm:w-auto text-center bg-white border-4 border-black px-6 py-4 font-sans text-lg md:text-xl shadow-neo hover:bg-black hover:text-white flex items-center justify-center gap-2">
+                        ORÇAMENTO
+                    </a>
+                </div>
+                
+                <div class="reveal flex gap-4 mt-4 delay-500">
+                    <a href="https://github.com/rochamaatheus" target="_blank" class="btn-brutal p-3 bg-white border-4 border-black shadow-neo">
+                        <i data-lucide="github" class="w-6 h-6"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/matheus-rocha-269870234/" target="_blank" class="btn-brutal p-3 bg-white border-4 border-black shadow-neo">
+                        <i data-lucide="linkedin" class="w-6 h-6"></i>
+                    </a>
+                    <a href="https://www.instagram.com/rocha.maatheus/" target="_blank" class="btn-brutal p-3 bg-white border-4 border-black shadow-neo">
+                        <i data-lucide="instagram" class="w-6 h-6"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="lg:col-span-4 relative reveal delay-500 flex justify-center lg:justify-end pointer-events-auto mt-8 lg:mt-0">
+                <div class="w-64 h-80 md:w-80 md:h-96 relative">
+                    <div class="absolute inset-0 bg-neo-purple border-4 border-black translate-x-3 translate-y-3 md:translate-x-4 md:translate-y-4"></div>
+                    <div class="absolute inset-0 bg-white border-4 border-black flex flex-col items-center justify-center overflow-hidden active:translate-x-1 active:translate-y-1 transition-transform cursor-pointer group">
+                        <div class="w-full h-full bg-gray-200 relative group-hover:scale-105 transition-transform duration-500">
+                             <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all" alt="Matheus Rocha">
+                        </div>
+                        <div class="absolute bottom-0 w-full bg-black text-white p-2 font-mono text-center text-xs md:text-sm border-t-4 border-black">
+                            GIT: rochamaatheus
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="bg-black text-white border-y-4 border-black py-3 md:py-4 marquee-wrapper rotate-1 scale-105 transform origin-center my-8 md:my-10 z-20 relative overflow-hidden">
+        <div class="marquee-track">
+            <span class="font-sans text-2xl md:text-5xl uppercase font-bold px-4 text-neo-purple">PHP • </span>
+            <span class="font-sans text-2xl md:text-5xl uppercase font-bold px-4">CODEIGNITER • </span>
+            <span class="font-sans text-2xl md:text-5xl uppercase font-bold px-4 text-neo-lime">REACT • </span>
+            <span class="font-sans text-2xl md:text-5xl uppercase font-bold px-4">NEXT.JS • </span>
+            <span class="font-sans text-2xl md:text-5xl uppercase font-bold px-4 text-neo-purple">TAILWIND • </span>
+            <span class="font-sans text-2xl md:text-5xl uppercase font-bold px-4">IA AGENTS • </span>
+        </div>
+        <div class="marquee-track">
+            <span class="font-sans text-2xl md:text-5xl uppercase font-bold px-4 text-neo-purple">PHP • </span>
+            <span class="font-sans text-2xl md:text-5xl uppercase font-bold px-4">CODEIGNITER • </span>
+            <span class="font-sans text-2xl md:text-5xl uppercase font-bold px-4 text-neo-lime">REACT • </span>
+            <span class="font-sans text-2xl md:text-5xl uppercase font-bold px-4">NEXT.JS • </span>
+            <span class="font-sans text-2xl md:text-5xl uppercase font-bold px-4 text-neo-purple">TAILWIND • </span>
+            <span class="font-sans text-2xl md:text-5xl uppercase font-bold px-4">IA AGENTS • </span>
+        </div>
+    </div>
+
+    <section id="skills" class="py-12 md:py-20 px-4 container mx-auto max-w-7xl">
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 border-b-4 border-black pb-4 reveal">
+            <h2 class="text-4xl md:text-7xl font-sans uppercase">A Minha<br>Stack</h2>
+            <p class="font-mono text-base md:text-lg max-w-md mt-4 md:mt-0 md:text-right">
+                Tecnologia certa para cada problema. Sem hype desnecessário.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+            <div class="reveal group bg-white border-4 border-black p-6 shadow-neo hover:shadow-neo-lg hover:-translate-x-1 hover:-translate-y-1 transition-all duration-200">
+                <div class="bg-neo-purple border-4 border-black w-12 h-12 md:w-14 md:h-14 flex items-center justify-center mb-6 group-hover:rotate-12 transition-transform">
+                    <i data-lucide="layout" class="w-6 h-6 md:w-8 md:h-8 text-white"></i>
+                </div>
+                <h3 class="font-sans text-xl md:text-2xl mb-4 uppercase">Sites Profissionais</h3>
+                <p class="font-mono text-sm leading-relaxed mb-6">Landing pages e sites institucionais para nichos.</p>
+                <ul class="font-mono text-xs space-y-2 border-t-2 border-dashed border-gray-300 pt-4">
+                    <li>✓ React / Next.js</li>
+                    <li>✓ Tailwind CSS</li>
+                </ul>
+            </div>
+
+            <div class="reveal group bg-neo-lime border-4 border-black p-6 shadow-neo hover:shadow-neo-lg hover:-translate-x-1 hover:-translate-y-1 transition-all duration-200 delay-100 relative">
+                <div class="absolute -top-4 -right-4 bg-black text-white px-2 py-1 font-mono text-xs font-bold transform rotate-6">BACKEND ROBUSTO</div>
+                <div class="bg-white border-4 border-black w-12 h-12 md:w-14 md:h-14 flex items-center justify-center mb-6 group-hover:-rotate-12 transition-transform">
+                    <i data-lucide="server" class="w-6 h-6 md:w-8 md:h-8"></i>
+                </div>
+                <h3 class="font-sans text-xl md:text-2xl mb-4 uppercase">Sistemas Web</h3>
+                <p class="font-mono text-sm leading-relaxed mb-6">Painéis administrativos e plataformas SaaS escaláveis.</p>
+                <ul class="font-mono text-xs space-y-2 border-t-2 border-dashed border-black pt-4">
+                    <li>✓ PHP / CodeIgniter</li>
+                    <li>✓ Node.js / SQL</li>
+                </ul>
+            </div>
+
+            <div class="reveal group bg-white border-4 border-black p-6 shadow-neo hover:shadow-neo-lg hover:-translate-x-1 hover:-translate-y-1 transition-all duration-200 delay-200">
+                <div class="bg-black border-4 border-black w-12 h-12 md:w-14 md:h-14 flex items-center justify-center mb-6 group-hover:rotate-12 transition-transform">
+                    <i data-lucide="bot" class="w-6 h-6 md:w-8 md:h-8 text-white"></i>
+                </div>
+                <h3 class="font-sans text-xl md:text-2xl mb-4 uppercase">IA & Automação</h3>
+                <p class="font-mono text-sm leading-relaxed mb-6">IAs de atendimento e automação de processos.</p>
+                <ul class="font-mono text-xs space-y-2 border-t-2 border-dashed border-gray-300 pt-4">
+                    <li>✓ LLMs Integration</li>
+                    <li>✓ Chatbots</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="projetos" class="py-12 md:py-20 bg-neo-black border-y-4 border-black text-white">
+        <div class="container mx-auto max-w-7xl px-4">
+            <h2 class="reveal text-4xl md:text-8xl font-sans uppercase mb-12 md:mb-16 text-center text-stroke-white hover:text-white transition-colors cursor-default">
+                Experiência
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+                <div class="reveal group">
+                    <div class="relative border-4 border-white h-64 md:h-80 overflow-hidden mb-4 bg-gray-800">
+                        <img src="https://images.unsplash.com/photo-1544197150-b99a580bbc7c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500" alt="Sistema Telecom">
+                        <div class="absolute top-4 left-4 bg-neo-purple text-white px-3 py-1 font-mono text-xs md:text-sm border-2 border-white">SISTEMA</div>
+                    </div>
+                    <div class="flex justify-between items-end border-b-2 border-white pb-2">
+                        <h3 class="text-xl md:text-2xl font-sans">SISTEMA TELECOM</h3>
+                        <span class="font-mono text-sm md:text-base text-neo-lime">PHP/CI</span>
+                    </div>
+                </div>
+
+                <div class="reveal group md:mt-16">
+                    <div class="relative border-4 border-white h-64 md:h-80 overflow-hidden mb-4 bg-gray-800">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500" alt="Dashboard Admin">
+                        <div class="absolute top-4 left-4 bg-neo-lime text-black px-3 py-1 font-mono text-xs md:text-sm border-2 border-black">DASHBOARD</div>
+                    </div>
+                    <div class="flex justify-between items-end border-b-2 border-white pb-2">
+                        <h3 class="text-xl md:text-2xl font-sans">PAINEL ADM</h3>
+                        <span class="font-mono text-sm md:text-base text-neo-lime">REACT</span>
+                    </div>
+                </div>
+
+                <div class="reveal group">
+                    <div class="relative border-4 border-white h-64 md:h-80 overflow-hidden mb-4 bg-gray-800">
+                        <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500" alt="Sites Diversos">
+                        <div class="absolute top-4 left-4 bg-white text-black px-3 py-1 font-mono text-xs md:text-sm border-2 border-black">WEB</div>
+                    </div>
+                    <div class="flex justify-between items-end border-b-2 border-white pb-2">
+                        <h3 class="text-xl md:text-2xl font-sans">SITES INSTITUCIONAIS</h3>
+                        <span class="font-mono text-sm md:text-base text-neo-lime">NEXT.JS</span>
+                    </div>
+                </div>
+
+                <div class="reveal group md:mt-16">
+                    <div class="relative border-4 border-white h-64 md:h-80 overflow-hidden mb-4 bg-gray-800">
+                        <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500" alt="IA Automação">
+                        <div class="absolute top-4 left-4 bg-neo-purple text-white px-3 py-1 font-mono text-xs md:text-sm border-2 border-white">IA</div>
+                    </div>
+                    <div class="flex justify-between items-end border-b-2 border-white pb-2">
+                        <h3 class="text-xl md:text-2xl font-sans">IA & AUTOMAÇÃO</h3>
+                        <span class="font-mono text-sm md:text-base text-neo-lime">PYTHON/API</span>
+                    </div>
+                </div>
+
+                <div class="reveal flex flex-col justify-center items-center text-center p-6 md:p-8 border-4 border-dashed border-gray-700 hover:border-neo-purple hover:bg-gray-900 transition-all group cursor-pointer col-span-1 md:col-span-2 mt-4 md:mt-8">
+                    <i data-lucide="github" class="w-12 h-12 md:w-16 md:h-16 mb-4 text-gray-500 group-hover:text-neo-purple transition-colors"></i>
+                    <h3 class="font-sans text-xl md:text-2xl mb-2">E MUITO MAIS NO GITHUB</h3>
+                    <a href="https://github.com/rochamaatheus" target="_blank" class="bg-white text-black px-6 py-2 font-mono font-bold hover:bg-neo-purple hover:text-white transition-colors uppercase text-sm md:text-base">
+                        github.com/rochamaatheus
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contato" class="py-12 md:py-24 px-4 container mx-auto max-w-5xl">
+        <div class="reveal bg-neo-purple border-4 border-black shadow-neo-lg relative overflow-hidden">
+            <div class="absolute -right-20 -top-20 w-40 h-40 md:w-64 md:h-64 bg-neo-dark-purple rounded-full mix-blend-multiply filter blur-3xl opacity-50"></div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2">
+                <div class="p-6 md:p-12 text-white flex flex-col justify-between border-b-4 md:border-b-0 md:border-r-4 border-black bg-neo-dark-purple/20 backdrop-blur-sm">
+                    <div>
+                        <h2 class="text-3xl md:text-5xl font-sans mb-4 md:mb-6 uppercase leading-tight">Bora tirar a<br>ideia do papel?</h2>
+                        <p class="font-mono text-sm md:text-base mb-8 opacity-90">
+                            Seja um site para seu consultório, um sistema complexo ou uma automação com IA.
+                        </p>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-3 font-mono text-xs md:text-sm opacity-80 break-all">
+                            <i data-lucide="mail" class="w-4 h-4 flex-shrink-0"></i> matheussilveirarocha.sc@gmail.com
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-6 md:p-12 bg-white text-black relative overflow-hidden flex flex-col justify-center">
+                    
+                    <div class="inline-block bg-neo-lime border-2 border-black px-2 py-1 font-mono text-xs font-bold w-fit mb-6 rotate-1 shadow-sm">
+                        INVESTIMENTO ESTIMADO
+                    </div>
+                    
+                    <div class="space-y-4 mb-8">
+                        <div class="border-4 border-black bg-neo-bg p-3 shadow-neo-sm hover:translate-x-1 hover:shadow-none transition-all cursor-default">
+                            <div class="flex justify-between items-center">
+                                <span class="font-bold font-mono text-xs uppercase text-gray-600">Site Básico<br>(Landing Page)</span>
+                                <span class="font-sans text-xl">R$ 200+</span>
+                            </div>
+                        </div>
+
+                        <div class="border-4 border-black bg-white p-3 shadow-neo-sm hover:translate-x-1 hover:shadow-none transition-all cursor-default relative">
+                             <div class="absolute -top-3 -right-2 bg-neo-purple text-white text-[10px] font-bold px-2 border-2 border-black rotate-3">POPULAR</div>
+                            <div class="flex justify-between items-center">
+                                <span class="font-bold font-mono text-xs uppercase text-gray-600">Site Complexo<br>(Institucional)</span>
+                                <span class="font-sans text-xl">R$ 1.000+</span>
+                            </div>
+                        </div>
+
+                        <div class="border-4 border-black bg-neo-lime p-3 shadow-neo-sm hover:translate-x-1 hover:shadow-none transition-all cursor-default">
+                            <div class="flex justify-between items-center">
+                                <span class="font-bold font-mono text-xs uppercase text-gray-800">Sistemas / Apps<br>(SaaS/Dashboards)</span>
+                                <span class="font-sans text-xl">R$ Customizado</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="https://www.instagram.com/rocha.maatheus/" target="_blank" class="btn-brutal w-full bg-black text-white border-4 border-black py-4 font-sans text-lg md:text-xl uppercase shadow-neo hover:bg-neo-purple flex items-center justify-center gap-2">
+                         <i data-lucide="instagram" class="w-5 h-5"></i> DISCUTIR MEU PROJETO
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-white border-t-4 border-black pt-12 pb-8 px-4 relative z-10">
+        <div class="container mx-auto max-w-7xl">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-8 mb-12">
+                <div class="text-center md:text-left">
+                    <h2 class="text-3xl md:text-4xl font-sans mb-2">MATHEUS ROCHA</h2>
+                    <p class="font-mono text-xs md:text-sm text-gray-500">Desenvolvedor Fullstack</p>
+                </div>
+                <div class="flex gap-4">
+                    <a href="https://github.com/rochamaatheus" target="_blank" class="btn-brutal w-12 h-12 border-4 border-black flex items-center justify-center hover:bg-neo-purple hover:text-white shadow-neo">
+                        <i data-lucide="github" class="w-6 h-6"></i>
+                    </a>
+                    <a href="https://www.instagram.com/rocha.maatheus/" target="_blank" class="btn-brutal w-12 h-12 border-4 border-black flex items-center justify-center hover:bg-neo-lime hover:text-black shadow-neo">
+                        <i data-lucide="instagram" class="w-6 h-6"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/matheus-rocha-269870234/" target="_blank" class="btn-brutal w-12 h-12 border-4 border-black flex items-center justify-center hover:bg-blue-600 hover:text-white shadow-neo">
+                        <i data-lucide="linkedin" class="w-6 h-6"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="border-t-4 border-black pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] md:text-xs font-mono uppercase text-center md:text-left">
+                <p>&copy; 2025 Matheus Rocha. Todos os direitos reservados.</p>
+                <p>Feito em Brasil 🇧🇷</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+        let isMenuOpen = false;
+
+        menuToggle.addEventListener('click', () => {
+            isMenuOpen = !isMenuOpen;
+            if (isMenuOpen) {
+                mobileMenu.classList.remove('hidden-menu');
+                mobileMenu.classList.add('visible-menu');
+                document.body.style.overflow = 'hidden'; 
+            } else {
+                mobileMenu.classList.remove('visible-menu');
+                mobileMenu.classList.add('hidden-menu');
+                document.body.style.overflow = '';
+            }
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                isMenuOpen = false;
+                mobileMenu.classList.remove('visible-menu');
+                mobileMenu.classList.add('hidden-menu');
+                document.body.style.overflow = '';
+            });
+        });
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('active');
+            });
+        }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+
+        function makeDraggable(el) {
+            let isDragging = false;
+            let startX, startY, initialLeft, initialTop;
+
+            const startDrag = (e) => {
+                if (e.type !== 'touchstart') e.preventDefault();
+                isDragging = true;
+                el.style.zIndex = 100;
+                const clientX = e.type.includes('mouse') ? e.clientX : e.touches[0].clientX;
+                const clientY = e.type.includes('mouse') ? e.clientY : e.touches[0].clientY;
+                const rect = el.getBoundingClientRect();
+                const parentRect = el.offsetParent ? el.offsetParent.getBoundingClientRect() : { left: 0, top: 0 };
+                const relativeLeft = rect.left - parentRect.left;
+                const relativeTop = rect.top - parentRect.top;
+                el.style.left = relativeLeft + 'px';
+                el.style.top = relativeTop + 'px';
+                el.style.right = 'auto';
+                el.style.bottom = 'auto';
+                el.style.position = 'absolute';
+                el.style.margin = '0';
+                startX = clientX;
+                startY = clientY;
+                initialLeft = relativeLeft;
+                initialTop = relativeTop;
+            };
+
+            const doDrag = (e) => {
+                if (!isDragging) return;
+                if (e.type === 'touchmove') e.preventDefault();
+                const clientX = e.type.includes('mouse') ? e.clientX : e.touches[0].clientX;
+                const clientY = e.type.includes('mouse') ? e.clientY : e.touches[0].clientY;
+                el.style.left = `${initialLeft + (clientX - startX)}px`;
+                el.style.top = `${initialTop + (clientY - startY)}px`;
+            };
+
+            const stopDrag = () => {
+                if(isDragging) {
+                    isDragging = false;
+                    el.style.zIndex = '50';
+                }
+            };
+
+            el.addEventListener('mousedown', startDrag);
+            window.addEventListener('mousemove', doDrag);
+            window.addEventListener('mouseup', stopDrag);
+            el.addEventListener('touchstart', startDrag, { passive: false });
+            window.addEventListener('touchmove', doDrag, { passive: false });
+            window.addEventListener('touchend', stopDrag);
+        }
+        document.querySelectorAll('.draggable').forEach(makeDraggable);
+
+        const stampWords = ["BRUTAL", "CLICK", "WOW", "CODE", "404", "NULL", "ERROR", "NICE"];
+        const colors = ["#ccff00", "#8b5cf6", "#ffffff", "#ff0055", "#00d4ff"];
+        let lastClickTime = 0;
+
+        document.addEventListener('click', (e) => {
+            const now = Date.now();
+            if (now - lastClickTime < 100) return;
+            lastClickTime = now;
+            if (e.target.closest('a') || e.target.closest('button') || e.target.closest('.draggable') || e.target.closest('#mobile-menu')) return;
+
+            const stamp = document.createElement('div');
+            stamp.classList.add('stamp');
+            stamp.innerText = stampWords[Math.floor(Math.random() * stampWords.length)];
+            const color = colors[Math.floor(Math.random() * colors.length)];
+            stamp.style.backgroundColor = color;
+            stamp.style.color = (color === "#ffffff" || color === "#ccff00") ? "black" : "white";
+            stamp.style.left = `${e.pageX}px`;
+            stamp.style.top = `${e.pageY}px`;
+            stamp.style.setProperty('--rotation', `${Math.random() * 40 - 20}deg`);
+            document.body.appendChild(stamp);
+            setTimeout(() => {
+                stamp.style.transition = "opacity 0.5s";
+                stamp.style.opacity = "0";
+                setTimeout(() => stamp.remove(), 500);
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
