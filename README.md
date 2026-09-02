@@ -38,7 +38,6 @@ Atualmente aprofundando estudos em **Next.js** e **Cybersecurity**, com prática
 | Projeto | Descrição |
 |---|---|
 | **[CRM Kamino](https://crm.agenciakamino.com.br)** | CRM integrado com LinkedIn Ads, Meta Ads e Google Ads |
-| **[Painel de IA Kamino](https://painel.agenciakamino.com.br)** | Painel de bots/agentes de IA com Kanban, fluxos configuráveis e gestão de horários |
 
 ---
 
