@@ -30,15 +30,13 @@ No dia a dia: TypeScript, Next.js, PHP e Python. Nas horas vagas: segurança ofe
 | **[Mobcorp Fleet](https://mobcorp.eco.br)** | Site, sistema de gestão e app Android/iOS de transporte executivo elétrico | Web · Mobile |
 | **[O Ponto Cego da Marcenaria](https://pontocegodamarcenaria.com.br)** | Landing page de captação para imersão presencial | Landing page |
 
-### Propostas e protótipos navegáveis
+### Propostas e protótipos
 
 | Projeto | Formato | Demo |
 |---|---|---|
-| [EasyJur](https://github.com/rochamaatheus/easyjur-landing) | Landing page de conversão (React, TS, Tailwind v4) | [abrir](https://rochamaatheus.github.io/easyjur-landing/) |
 | [LIDERARH Check](https://github.com/rochamaatheus/liderarh-check-prototipo) | Protótipo de app de check-in emocional e NR-01 | [abrir](https://rochamaatheus.github.io/liderarh-check-prototipo/) |
 | [Wesen Clínica](https://github.com/rochamaatheus/wesen-clinica) | 3 propostas de identidade visual | [abrir](https://rochamaatheus.github.io/wesen-clinica/) |
 | [Lynch Store](https://github.com/rochamaatheus/site-lynch-store) | Wireframe de loja geek e cosplay | [abrir](https://rochamaatheus.github.io/site-lynch-store/) |
-| [EVDL Escola de Vôlei](https://github.com/rochamaatheus/evdl-escola-de-volei) | Wireframe de sistema de horas e custos | [abrir](https://rochamaatheus.github.io/evdl-escola-de-volei/) |
 | [Ties Comunicação](https://github.com/rochamaatheus/ties-comunicacao) · [AZ3 Usinagem](https://github.com/rochamaatheus/az3-apresentacao) | Estudos de layout para apresentação | [Ties](https://rochamaatheus.github.io/ties-comunicacao/) · [AZ3](https://rochamaatheus.github.io/az3-apresentacao/) |
 
 ### Experimentos
