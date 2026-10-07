@@ -41,7 +41,6 @@ No dia a dia: TypeScript, Next.js, PHP e Python. Nas horas vagas: segurança ofe
 
 ### Experimentos
 
-- **[viva_agent](https://github.com/rochamaatheus/viva_agent)**: agente de navegação com IA controlado por CLI e API (Python, FastAPI)
 - **[new_games_onda](https://github.com/rochamaatheus/new_games_onda)**: Chapéu Seletor da gincana, com balanceamento automático de equipes ([demo](https://new-games-onda.vercel.app))
 - **[anotacoes](https://github.com/rochamaatheus/anotacoes)**: DevFocus, timer de foco e histórico de produtividade ([demo](https://anotacoes-blue.vercel.app))
 - **[maze-game](https://github.com/rochamaatheus/maze-game)**: labirinto 3D no navegador ([jogar](https://rochamaatheus.github.io/maze-game/))
